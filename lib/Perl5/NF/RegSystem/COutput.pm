@@ -146,7 +146,7 @@ VERSION_REFERENCE
 sub outputConstants {
   my ($fh, $constants) = @_;
 
-  return if (length(@$constants) == 0);
+  return if (scalar(@$constants) == 0);
 
   print $fh <<CONSTANTS_HEADER;
 /* ========= Constants ========= */
@@ -349,7 +349,7 @@ MEMALLOC_HEADER
 sub outputRegisters {
   my ($fh, $memalloc) = @_;
 
-  return if (length(@$memalloc) == 0);
+  return if (scalar(@$memalloc) == 0);
 
   print $fh <<REGISTER_HEADER;
 /* ========== Registers ========== */

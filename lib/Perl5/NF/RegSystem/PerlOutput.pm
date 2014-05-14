@@ -160,7 +160,7 @@ VERSION_REFERENCE
 sub outputConstants {
   my ($constants) = @_;
 
-  return if (length(@$constants) == 0);
+  return if (scalar(@$constants) == 0);
 
   $buf .= <<CONSTANTS_HEADER;
 # -------------------------------------
@@ -372,7 +372,7 @@ MEMALLOC_HEADER
 sub outputRegisters {
   my ($memalloc) = @_;
 
-  return if (length(@$memalloc) == 0);
+  return if (scalar(@$memalloc) == 0);
 
   $buf .= <<REGISTER_HEADER;
 # -------------------------------------
