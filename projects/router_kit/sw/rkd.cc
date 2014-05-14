@@ -21,6 +21,8 @@
 #include "linux_proc_net.hh"
 
 extern "C" {
+#include <sys/types.h>
+#include <sys/stat.h>
 #include <getopt.h>
 #include <unistd.h>
 #include <fcntl.h>
