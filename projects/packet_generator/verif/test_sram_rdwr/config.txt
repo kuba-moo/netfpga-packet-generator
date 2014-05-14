@@ -1,0 +1,2 @@
+test_desc = Packet generator SRAM read/write test
+finish = 16000

@@ -1,0 +1,2 @@
+test_desc = Packet generator -- send two packets to different ports, padding both packets
+finish = 28000

@@ -1,0 +1,2 @@
+test_desc = Packet generator -- receive two packets and drop one
+finish = 24000

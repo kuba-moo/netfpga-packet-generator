@@ -1,0 +1,2 @@
+test_desc = Packet generator -- send two packets with no delay
+finish = 18000

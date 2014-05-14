@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nf:module xmlns:nf="http://www.NetFPGA.org/NF2_register_system" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.NetFPGA.org/NF2_register_system NF2_register_system.xsd ">
+        <nf:name>rate_limiter</nf:name>
+        <nf:prefix>rate_limit</nf:prefix>
+        <nf:location>udp</nf:location>
+        <nf:description>Event Capture Registers</nf:description>
+        <nf:blocksize>64</nf:blocksize>
+        <nf:registers>
+                <nf:register>
+                        <nf:name>ctrl</nf:name>
+                        <nf:description>control for the Rate Limiter</nf:description>
+                        <nf:type>software32</nf:type>
+                </nf:register>
+                <nf:register>
+                        <nf:name>token_interval</nf:name>
+                        <nf:description>Token interval for the rate limiter</nf:description>
+                        <nf:type>software32</nf:type>
+                </nf:register>
+                <nf:register>
+                        <nf:name>token_inc</nf:name>
+                        <nf:description>Token increment for the rate limiter</nf:description>
+                        <nf:type>software32</nf:type>
+                </nf:register>
+        </nf:registers>
+        <nf:constants>
+                <nf:constant>
+                        <nf:name>enable_bit_num</nf:name>
+                        <nf:description>enable bit num</nf:description>
+                        <nf:value>0</nf:value>
+                </nf:constant>
+                <nf:constant>
+                        <nf:name>include_overhead_bit_num</nf:name>
+                        <nf:description>overhead bit num</nf:description>
+                        <nf:value>1</nf:value>
+                </nf:constant>
+        </nf:constants>
+        <nf:types>
+        </nf:types>
+</nf:module>

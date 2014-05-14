@@ -1,0 +1,2 @@
+test_desc = Packet generator -- send two packets, padding both packets
+finish = 18000

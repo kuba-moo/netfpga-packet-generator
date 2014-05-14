@@ -1,0 +1,56 @@
+Packet Generator
+================
+
+Changes/Release notes:
+----------------------
+Version 1.1.1
+(Jun 18, 2010)
+
+  Major changes:
+   * Make compatible with the NetFPGA 2.1.1 base release
+
+  Bug fixes:
+   * Allow 10kbps deviation from desired rate in rate limiter regression test
+
+
+Version 1.1.0
+(Apr 30, 2010)
+
+  Improvements:
+   * Supports loading of headers only into SRAM. Packets can be padded upon
+     tranmission to a per-packet-specified length.
+   * Received packets dropped by default on ports not being captured.
+     (Necessary when transmitting and receiving at maximum data rate on all
+     four ports to overcome limitation in output queues.)
+   * Enable capturing without transmission.
+
+  Bug fixes:
+   * Fix usec calculation when run in nanoseconds mode
+
+
+Version 1.0.3
+(Aug 20, 2009)
+  Updated to use the new NetFPGA 2.0 register system
+
+
+Version 1.0.2
+(Jan 20, 2009)
+
+  Wait option added to simplify synchronization with multiple pkt generators
+
+  Packet capture bug fixed
+   - Some headers were left on packets
+
+  Transmit/receive queue sizes allocated based on PCAP files being transmitted
+
+
+Version 1.0.1
+(Dec 2, 2008)
+
+  Included regression tests in release
+
+
+Version 1.0 beta
+(Aug 27, 2007)
+
+  Initial preview release

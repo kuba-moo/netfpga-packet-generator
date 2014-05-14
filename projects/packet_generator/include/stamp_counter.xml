@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nf:module xmlns:nf="http://www.NetFPGA.org/NF2_register_system" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.NetFPGA.org/NF2_register_system NF2_register_system.xsd ">
+        <nf:name>stamp_counter</nf:name>
+        <nf:prefix>counter</nf:prefix>
+        <nf:location>core</nf:location>
+        <nf:description>Registers for the Stamp Counter and PTP</nf:description>
+        <nf:blocksize>256k</nf:blocksize>
+        <nf:registers>
+                <nf:register>
+                        <nf:name>1</nf:name>
+                        <nf:description>First 32 bits of the counter</nf:description>
+                        <nf:type>counter32</nf:type>
+                </nf:register>
+                <nf:register>
+                        <nf:name>2</nf:name>
+                        <nf:description>Second 32 bits of the counter</nf:description>
+                        <nf:type>counter32</nf:type>
+                </nf:register>
+                <nf:register>
+                        <nf:name>3</nf:name>
+                        <nf:description>Third 32 bits of the counter</nf:description>
+                        <nf:type>counter32</nf:type>
+                </nf:register>
+                <nf:register>
+                        <nf:name>4</nf:name>
+                        <nf:description>Fourth 32 bits of the counter</nf:description>
+                        <nf:type>counter32</nf:type>
+                </nf:register>
+                <nf:register>
+                        <nf:name>1_2_load</nf:name>
+                        <nf:description>Load the counter_1 and counter_2</nf:description>
+                        <nf:type>software32</nf:type>
+                </nf:register>
+                <nf:register>
+                        <nf:name>3_4_load</nf:name>
+                        <nf:description>Load the counter_3 and counter_4</nf:description>
+                        <nf:type>software32</nf:type>
+                </nf:register>
+                <nf:register>
+                        <nf:name>bit_95_64</nf:name>
+                        <nf:description>Bits 95 to 64 of counter</nf:description>
+                        <nf:type>software32</nf:type>
+                </nf:register>
+                <nf:register>
+                        <nf:name>bit_63_32</nf:name>
+                        <nf:description>Bits 63 to 32 of counter</nf:description>
+                        <nf:type>software32</nf:type>
+                </nf:register>
+                <nf:register>
+                        <nf:name>bit_31_0</nf:name>
+                        <nf:description>Bits 31 to 0 of counter</nf:description>
+                        <nf:type>software32</nf:type>
+                </nf:register>
+                <nf:register>
+                        <nf:name>read_enable</nf:name>
+                        <nf:description>counter read enable</nf:description>
+                        <nf:type>software32</nf:type>
+                </nf:register>
+                <nf:register>
+                        <nf:name>clk_syn_0_counter_reset</nf:name>
+                        <nf:description>Counter reset</nf:description>
+                        <nf:type>software32</nf:type>
+                </nf:register>
+                <nf:register>
+                        <nf:name>clk_syn_0_tx</nf:name>
+                        <nf:description>clock syn transmit</nf:description>
+                        <nf:type>clk_syn64</nf:type>
+                </nf:register>
+                <nf:register>
+                        <nf:name>clk_syn_0_rx</nf:name>
+                        <nf:description>clock wyn receive</nf:description>
+                        <nf:type>clk_syn64</nf:type>
+                </nf:register>
+                <nf:register>
+                        <nf:name>clk_syn_1_counter_reset</nf:name>
+                        <nf:description>Counter reset</nf:description>
+                        <nf:type>software32</nf:type>
+                </nf:register>
+                <nf:register>
+                        <nf:name>clk_syn_1_tx</nf:name>
+                        <nf:description>clock syn transmit</nf:description>
+                        <nf:type>clk_syn64</nf:type>
+                </nf:register>
+                <nf:register>
+                        <nf:name>clk_syn_1_rx</nf:name>
+                        <nf:description>clock wyn receive</nf:description>
+                        <nf:type>clk_syn64</nf:type>
+                </nf:register>
+                <nf:register>
+                        <nf:name>clk_syn_2_counter_reset</nf:name>
+                        <nf:description>Counter reset</nf:description>
+                        <nf:type>software32</nf:type>
+                </nf:register>
+                <nf:register>
+                        <nf:name>clk_syn_2_tx</nf:name>
+                        <nf:description>clock syn transmit</nf:description>
+                        <nf:type>clk_syn64</nf:type>
+                </nf:register>
+                <nf:register>
+                        <nf:name>clk_syn_2_rx</nf:name>
+                        <nf:description>clock wyn receive</nf:description>
+                        <nf:type>clk_syn64</nf:type>
+                </nf:register>
+                <nf:register>
+                        <nf:name>clk_syn_3_counter_reset</nf:name>
+                        <nf:description>Counter reset</nf:description>
+                        <nf:type>software32</nf:type>
+                </nf:register>
+                <nf:register>
+                        <nf:name>clk_syn_3_tx</nf:name>
+                        <nf:description>clock syn transmit</nf:description>
+                        <nf:type>clk_syn64</nf:type>
+                </nf:register>
+                <nf:register>
+                        <nf:name>clk_syn_3_rx</nf:name>
+                        <nf:description>clock wyn receive</nf:description>
+                        <nf:type>clk_syn64</nf:type>
+                </nf:register>
+                <nf:register>
+                        <nf:name>ptp_valid_tx</nf:name>
+                        <nf:description>ptp tx valid</nf:description>
+                        <nf:type>software32</nf:type>
+                </nf:register>
+                <nf:register>
+                        <nf:name>ptp_valid_rx</nf:name>
+                        <nf:description>ptp rx valid</nf:description>
+                        <nf:type>software32</nf:type>
+                </nf:register>
+                <nf:register>
+                        <nf:name>ptp_enable_mask_rx</nf:name>
+                        <nf:description>ptp enable mask rx</nf:description>
+                        <nf:type>software32</nf:type>
+                </nf:register>
+                <nf:register>
+                        <nf:name>ptp_enable_mask_tx</nf:name>
+                        <nf:description>ptp enable mask tx</nf:description>
+                        <nf:type>software32</nf:type>
+                </nf:register>
+                <nf:register>
+                        <nf:name>ptp_mask_rx</nf:name>
+                        <nf:description>ptp mask rx</nf:description>
+                        <nf:type>software32</nf:type>
+                </nf:register>
+                <nf:register>
+                        <nf:name>ptp_mask_tx</nf:name>
+                        <nf:description>ptp mask tx</nf:description>
+                        <nf:type>software32</nf:type>
+                </nf:register>
+        </nf:registers>
+        <nf:constants>
+        </nf:constants>
+        <nf:types>
+                <nf:type xsi:type="nf:SimpleType">
+                        <nf:name>clk_syn64</nf:name>
+                        <nf:width>64</nf:width>
+                </nf:type>
+        </nf:types>
+</nf:module>

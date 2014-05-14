@@ -1,0 +1,11 @@
+#!/usr/bin/perl
+
+use NF::RegressLib;
+
+my $device = nftest_get_iface('nf2c0');
+system("nf_download  -i $device $ENV{NF_ROOT}/bitfiles/packet_generator.bit") == 0
+	or die "Download Failed: $?\n";
+
+printf "SUCCESS\n";
+exit(0);
+

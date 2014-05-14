@@ -1,0 +1,2 @@
+test_desc = Packet generator -- send single packet after resizing queues
+finish = 45000

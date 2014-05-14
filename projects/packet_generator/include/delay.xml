@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nf:module xmlns:nf="http://www.NetFPGA.org/NF2_register_system" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.NetFPGA.org/NF2_register_system NF2_register_system.xsd ">
+        <nf:name>delay</nf:name>
+        <nf:prefix>delay</nf:prefix>
+        <nf:location>udp</nf:location>
+        <nf:description>Delay Module Registers</nf:description>
+        <nf:blocksize>64</nf:blocksize>
+        <nf:registers>
+                <nf:register>
+                        <nf:name>reset</nf:name>
+                        <nf:description>Reset the delay counter</nf:description>
+                        <nf:type>software32</nf:type>
+                </nf:register>
+        </nf:registers>
+        <nf:constants>
+        </nf:constants>
+        <nf:types>
+        </nf:types>
+</nf:module>

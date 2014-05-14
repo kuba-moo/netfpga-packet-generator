@@ -1,0 +1,2 @@
+test_desc = Packet generator -- send two packets with rate reduced massively
+finish = 18000
