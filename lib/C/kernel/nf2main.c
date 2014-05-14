@@ -187,7 +187,11 @@ static int nf2_probe(struct pci_dev *pdev, const struct pci_device_id *id)
 
 	/* Initialize the locking mechanisms */
 	PDEBUG(KERN_INFO "nf2: initializing data structures in card\n");
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(2, 6, 37)
+	sema_init(&card->state_lock, 1);
+#else
 	init_MUTEX(&card->state_lock);
+#endif
 	spin_lock_init(&card->txbuff_lock);
 	atomic_set(&card->dma_tx_in_progress, 0);
 	atomic_set(&card->dma_rx_in_progress, 0);
