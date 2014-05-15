@@ -36,6 +36,7 @@
     <nf:group name="udp">
       <nf:instance name="in_arb" />
       <nf:instance name="packet_capture" />
+      <nf:instance name="packer" />
       <nf:instance name="output_queues" />
       <nf:instance name="rate_limiter" count="8" />
       <nf:instance name="delay" />

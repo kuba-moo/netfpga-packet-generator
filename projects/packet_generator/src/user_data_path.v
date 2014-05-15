@@ -241,6 +241,19 @@ module user_data_path
    wire [`CPCI_NF2_DATA_WIDTH-1:0]  pkt_cap_in_reg_data;
    wire [UDP_REG_SRC_WIDTH-1:0]     pkt_cap_in_reg_src;
 
+   //------- packer lut wires/regs ------
+   wire [CTRL_WIDTH-1:0]            packer_in_ctrl;
+   wire [DATA_WIDTH-1:0]            packer_in_data;
+   wire                             packer_in_wr;
+   wire                             packer_in_rdy;
+
+   wire                             packer_in_reg_req;
+   wire                             packer_in_reg_ack;
+   wire                             packer_in_reg_rd_wr_L;
+   wire [`UDP_REG_ADDR_WIDTH-1:0]   packer_in_reg_addr;
+   wire [`CPCI_NF2_DATA_WIDTH-1:0]  packer_in_reg_data;
+   wire [UDP_REG_SRC_WIDTH-1:0]     packer_in_reg_src;
+
    //------- output queues wires/regs ------
    wire [CTRL_WIDTH-1:0]            oq_in_ctrl;
    wire [DATA_WIDTH-1:0]            oq_in_data;
@@ -445,10 +458,10 @@ module user_data_path
       .UDP_REG_SRC_WIDTH   (UDP_REG_SRC_WIDTH)
    ) pkt_capture (
       // --- data path interface
-      .out_data                           (oq_in_data),
-      .out_ctrl                           (oq_in_ctrl),
-      .out_wr                             (oq_in_wr),
-      .out_rdy                            (oq_in_rdy),
+      .out_data                           (packer_in_data),
+      .out_ctrl                           (packer_in_ctrl),
+      .out_wr                             (packer_in_wr),
+      .out_rdy                            (packer_in_rdy),
 
       .in_data                            (pkt_cap_in_data),
       .in_ctrl                            (pkt_cap_in_ctrl),
@@ -462,6 +475,43 @@ module user_data_path
       .reg_addr_in                        (pkt_cap_in_reg_addr),
       .reg_data_in                        (pkt_cap_in_reg_data),
       .reg_src_in                         (pkt_cap_in_reg_src),
+
+      .reg_req_out                        (packer_in_reg_req),
+      .reg_ack_out                        (packer_in_reg_ack),
+      .reg_rd_wr_L_out                    (packer_in_reg_rd_wr_L),
+      .reg_addr_out                       (packer_in_reg_addr),
+      .reg_data_out                       (packer_in_reg_data),
+      .reg_src_out                        (packer_in_reg_src),
+
+      // --- Misc
+      .clk                                (clk),
+      .reset                              (reset)
+   );
+
+   packer
+   #(
+      .DATA_WIDTH          (DATA_WIDTH),
+      .CTRL_WIDTH          (CTRL_WIDTH),
+      .UDP_REG_SRC_WIDTH   (UDP_REG_SRC_WIDTH)
+   ) packer (
+      // --- data path interface
+      .out_data                           (oq_in_data),
+      .out_ctrl                           (oq_in_ctrl),
+      .out_wr                             (oq_in_wr),
+      .out_rdy                            (oq_in_rdy),
+
+      .in_data                            (packer_in_data),
+      .in_ctrl                            (packer_in_ctrl),
+      .in_wr                              (packer_in_wr),
+      .in_rdy                             (packer_in_rdy),
+
+      // --- Register interface
+      .reg_req_in                         (packer_in_reg_req),
+      .reg_ack_in                         (packer_in_reg_ack),
+      .reg_rd_wr_L_in                     (packer_in_reg_rd_wr_L),
+      .reg_addr_in                        (packer_in_reg_addr),
+      .reg_data_in                        (packer_in_reg_data),
+      .reg_src_in                         (packer_in_reg_src),
 
       .reg_req_out                        (oq_in_reg_req),
       .reg_ack_out                        (oq_in_reg_ack),
