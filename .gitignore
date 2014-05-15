@@ -5,14 +5,17 @@
 *.ko
 *.cmd
 
+*.ngc
+
 *.mod.c
 
 reg_defines_*.pm
 
 registers.v
 reg_defines.h
+src_coregen/
 
-
+nf2_top*
 
 
 lib/C/download/nf_download
@@ -44,3 +47,9 @@ projects/selftest/sw/selftest
 
 projects/packet_generator/lib/
 projects/packet_generator/sw/regdump
+projects/packet_generator/synth/netlist.lst
+projects/packet_generator/synth/smartpreview.twr
+projects/packet_generator/synth/synth.txt
+projects/packet_generator/synth/xlnx_auto_0.ise
+projects/packet_generator/synth/xlnx_auto_0_xdb/
+projects/packet_generator/synth/xst/
